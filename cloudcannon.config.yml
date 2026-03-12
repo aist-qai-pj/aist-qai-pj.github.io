@@ -8,6 +8,7 @@ collections_config:
     url: https://aist-qai-pj.github.io/[path]
     disable_url: false
     preview:
+      url: "https://aist-qai-pj.github.io/[path]"
       text:
       subtext:
       icon:
