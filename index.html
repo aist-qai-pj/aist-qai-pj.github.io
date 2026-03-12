@@ -16,9 +16,9 @@
 <body>
 
   <!-- この <main> の中が Visual で編集できるようになります -->
-  <main data-editable="source" data-path="/index.html" data-key="main">
-    <p>
-    <div class="box">
+<main data-editable="source" data-path="/index.html" data-key="main">
+  <div class="box">
+    <div data-editable="rich-text" data-path="/index.html" data-key="content">
       <h1>CloudCannon 編集テスト</h1>
       <p>ここはクライアントが編集する文章です。</p>
       <p>この文章をCloudCannon上で変更して保存すると、GitHubにコミットされて公開に反映されます。</p>
@@ -29,8 +29,7 @@
       <p>例：<a href="https://example.com/">サイトへのリンク</a></p>
       <small>※この枠の中だけ直せればOK（テスト）</small>
     </div>
-    </p>
-  </main>
-
+  </div>
+</main>
 </body>
 </html>
