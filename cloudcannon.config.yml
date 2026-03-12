@@ -18,6 +18,8 @@ collections_config:
     _enabled_editors:
       - visual
       - content
+      - data
+      - source
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
