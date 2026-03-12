@@ -1,54 +1,34 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AIセーフティ強化</title>
-  <meta name="description" content="AI製品・サービスを安心して利用するための評価・管理技術とルールづくりを一体で推進します。" />
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/style_taikisha_bg.css">
-<link rel="stylesheet" href="assets/css/style_bg_motion_override_v4.css">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CloudCannon 編集テスト</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Noto Sans JP", sans-serif; margin: 40px; line-height: 1.7; }
+    .box { padding: 16px; border: 1px solid #ddd; border-radius: 10px; max-width: 760px; }
+    h1 { margin: 0 0 12px; font-size: 24px; }
+    p { margin: 0 0 10px; }
+    small { color: #666; }
+  </style>
 </head>
 
 <body>
 
-  <main>
-    <!-- HERO : full-bleed -->
-test<!-- test -->
+  <!-- この <main> の中が Visual で編集できるようになります -->
+  <main data-editable="source" data-path="/cc_test.html" data-key="main">
+    <div class="box">
+      <h1>CloudCannon 編集テスト</h1>
+      <p>ここはクライアントが編集する文章です。</p>
+      <p>この文章をCloudCannon上で変更して保存すると、GitHubにコミットされて公開に反映されます。</p>
+      <ul>
+        <li>箇条書きも編集できるか確認</li>
+        <li>改行やリンクも編集できるか確認</li>
+      </ul>
+      <p>例：<a href="https://example.com/">サイトへのリンク</a></p>
+      <small>※この枠の中だけ直せればOK（テスト）</small>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="foot">© AI Safety Enhancement</div>
-      <div class="foot">Prototype</div>
-    </div>
-  </footer>
-
-<script src="assets/js/app.js"></script>
-	<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
-  <filter id="wobble" x="-20%" y="-20%" width="140%" height="140%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.010" numOctaves="2" seed="2" result="noise">
-      <animate attributeName="baseFrequency" dur="8s"
-               values="0.008;0.012;0.009" repeatCount="indefinite"></animate>
-      <animate attributeName="seed" dur="7s"
-               values="1;2;3;2;1" repeatCount="indefinite"></animate>
-    </feTurbulence>
-
-    <feDisplacementMap in="SourceGraphic" in2="noise" scale="30"
-                       xChannelSelector="R" yChannelSelector="G">
-      <animate attributeName="scale" dur="7s"
-               values="18;30;20" repeatCount="indefinite"></animate>
-    </feDisplacementMap>
-  </filter>
-</svg>
-<!-- Vanta RINGS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-<script src="assets/js/vanta.rings.monochrome.uniform.offset.js"></script>
-<script src="assets/js/vanta-init.js"></script>
 </body>
 </html>
