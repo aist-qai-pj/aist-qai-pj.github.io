@@ -5,6 +5,7 @@ collections_config:
   pages:
     path: ''
     icon: wysiwyg
+    url: https://aist-qai-pj.github.io/[path]
     disable_url: false
     preview:
       text:
