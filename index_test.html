@@ -9,254 +9,153 @@
 </head>
 
 <body class="portal">
-  <header class="portal-header" id="top">
-    <div class="portal-container">
-      <div class="mast">
-        <div class="mast-left">
-          <div class="mast-mark" aria-hidden="true"></div>
+  <!-- ★編集可能にするのは「この中だけ」：1ブロック方式 -->
+  <div class="editable"
+       data-editable="text"
+       data-path="index_test.html"
+       data-key="content">
 
-          <!-- ヘッダー左：まとめて1ブロックだけ編集 -->
-          <div class="mast-text editable"
-               data-editable="text"
-               data-path="index_test.html"
-               data-key="mast_text">
-            <div class="mast-org">AIST</div>
-            <div class="mast-title">AI品質・AIセーフティ活動</div>
-            <div class="mast-sub">AI Quality &amp; AI Safety Activities</div>
+    <header class="portal-header" id="top">
+      <div class="portal-container">
+        <div class="mast">
+          <div class="mast-left">
+            <div class="mast-mark" aria-hidden="true"></div>
+            <div class="mast-text">
+              <div class="mast-org">AIST</div>
+              <div class="mast-title">AI品質・AIセーフティ活動</div>
+              <div class="mast-sub">AI Quality &amp; AI Safety Activities</div>
+            </div>
           </div>
-        </div>
 
-        <div class="mast-right">
-          <!-- ヘッダー右：まとめて1ブロックだけ編集 -->
-          <div class="issue editable"
-               data-editable="text"
-               data-path="index_test.html"
-               data-key="issue_block">
-            <div class="issue-kicker">PORTAL / TABLE OF CONTENTS</div>
-
-            <div class="issue-meta">
-              <span class="issue-pill">ISSUE 2025–</span>
-              <span class="issue-dot" aria-hidden="true"></span>
-              <span class="issue-date">Update: <time datetime="2026-03-15">2026.03.15</time></span>
+          <div class="mast-right">
+            <div class="issue">
+              <div class="issue-kicker">PORTAL / TABLE OF CONTENTS</div>
+              <div class="issue-meta">
+                <span class="issue-pill">ISSUE 2025–</span>
+                <span class="issue-dot" aria-hidden="true"></span>
+                <span class="issue-date">Update: <time datetime="2026-03-15">2026.03.15</time></span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="lead">
-        <!-- リード：1ブロック編集 -->
-        <div class="lead-text editable"
-             data-editable="text"
-             data-path="index_test.html"
-             data-key="lead_text">
-          各活動の概要ページへの入口です。<strong>3月公開対象は「AIセーフティ強化1.0」</strong>です。
+        <div class="lead">
+          <p class="lead-text">
+            各活動の概要ページへの入口です。<strong>3月公開対象は「AIセーフティ強化1.0」</strong>です。
+          </p>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="portal-main">
-    <div class="portal-container">
-      <section class="toc" aria-label="目次">
-        <div class="toc-head">
-          <div class="toc-title editable"
-               data-editable="text"
-               data-path="index_test.html"
-               data-key="toc_title">CONTENTS</div>
-
-          <div class="toc-note editable"
-               data-editable="text"
-               data-path="index_test.html"
-               data-key="toc_note">※リンク先が準備中のページは、内容確定後に順次作成します。</div>
-        </div>
-
-        <!-- FEATURE（公開対象） -->
-        <article class="toc-item toc-feature">
-          <a class="toc-link" href="aisafety1/index.html" target="_blank">
-            <div class="toc-no editable"
-                 data-editable="text"
-                 data-path="index_test.html"
-                 data-key="card01_no">01</div>
-
-            <div class="toc-body">
-              <div class="toc-topline">
-                <div class="toc-label editable"
-                     data-editable="text"
-                     data-path="index_test.html"
-                     data-key="card01_label">FEATURE</div>
-
-                <!-- タグ群：まとめて編集（バラすとエラー要因になりやすい） -->
-                <div class="toc-tags editable"
-                     data-editable="text"
-                     data-path="index_test.html"
-                     data-key="card01_tags">
-                  <span class="tag">2025年度</span>
-                  <span class="tag">NEDO委託</span>
-                  <span class="tag is-live">公開対象</span>
-                </div>
-              </div>
-
-              <div class="toc-h editable"
-                   data-editable="text"
-                   data-path="index_test.html"
-                   data-key="card01_title">AIセーフティ強化 1.0</div>
-
-              <div class="toc-desc editable"
-                   data-editable="text"
-                   data-path="index_test.html"
-                   data-key="card01_desc">
-                2025年度NEDO委託事業「AIセーフティ強化に関する研究開発」。
-                評価・管理技術とルールづくりを一体で推進します。
-              </div>
-
-              <div class="toc-foot">
-                <span class="toc-arrow" aria-hidden="true">→</span>
-                <span class="toc-cta editable"
-                      data-editable="text"
-                      data-path="index_test.html"
-                      data-key="card01_cta">Enter</span>
-              </div>
-            </div>
-          </a>
-        </article>
-
-        <!-- 以降：準備中 -->
-        <article class="toc-item">
-          <div class="toc-link is-soon" aria-disabled="true">
-            <div class="toc-no editable"
-                 data-editable="text"
-                 data-path="index_test.html"
-                 data-key="card02_no">02</div>
-
-            <div class="toc-body">
-              <div class="toc-topline">
-                <div class="toc-label editable"
-                     data-editable="text"
-                     data-path="index_test.html"
-                     data-key="card02_label">ARCHIVE</div>
-
-                <div class="toc-tags editable"
-                     data-editable="text"
-                     data-path="index_test.html"
-                     data-key="card02_tags">
-                  <span class="tag">2018–2024年度</span>
-                  <span class="tag is-soon">準備中</span>
-                </div>
-              </div>
-
-              <div class="toc-h editable"
-                   data-editable="text"
-                   data-path="index_test.html"
-                   data-key="card02_title">AI品質マネジメント</div>
-
-              <div class="toc-desc editable"
-                   data-editable="text"
-                   data-path="index_test.html"
-                   data-key="card02_desc">
-                AI品質・信頼性の評価・管理に関する取組。（NEDO事業／経産省交付金事業 等）
-              </div>
-            </div>
+    <main class="portal-main">
+      <div class="portal-container">
+        <section class="toc" aria-label="目次">
+          <div class="toc-head">
+            <h1 class="toc-title">CONTENTS</h1>
+            <div class="toc-note">※リンク先が準備中のページは、内容確定後に順次作成します。</div>
           </div>
-        </article>
 
-        <article class="toc-item">
-          <div class="toc-link is-soon" aria-disabled="true">
-            <div class="toc-no editable"
-                 data-editable="text"
-                 data-path="index_test.html"
-                 data-key="card03_no">03</div>
+          <article class="toc-item toc-feature">
+            <a class="toc-link" href="aisafety1/index.html" target="_blank">
+              <div class="toc-no">01</div>
+              <div class="toc-body">
+                <div class="toc-topline">
+                  <div class="toc-label">FEATURE</div>
+                  <div class="toc-tags">
+                    <span class="tag">2025年度</span>
+                    <span class="tag">NEDO委託</span>
+                    <span class="tag is-live">公開対象</span>
+                  </div>
+                </div>
 
-            <div class="toc-body">
-              <div class="toc-topline">
-                <div class="toc-label editable"
-                     data-editable="text"
-                     data-path="index_test.html"
-                     data-key="card03_label">NEXT</div>
+                <h2 class="toc-h">AIセーフティ強化 1.0</h2>
+                <p class="toc-desc">
+                  2025年度NEDO委託事業「AIセーフティ強化に関する研究開発」。
+                  評価・管理技術とルールづくりを一体で推進します。
+                </p>
 
-                <div class="toc-tags editable"
-                     data-editable="text"
-                     data-path="index_test.html"
-                     data-key="card03_tags">
-                  <span class="tag">2026年度</span>
-                  <span class="tag">BRIDGE</span>
-                  <span class="tag is-soon">準備中</span>
+                <div class="toc-foot">
+                  <span class="toc-arrow" aria-hidden="true">→</span>
+                  <span class="toc-cta">Enter</span>
                 </div>
               </div>
+            </a>
+          </article>
 
-              <div class="toc-h editable"
-                   data-editable="text"
-                   data-path="index_test.html"
-                   data-key="card03_title">AIセーフティ強化 2.0</div>
-
-              <div class="toc-desc editable"
-                   data-editable="text"
-                   data-path="index_test.html"
-                   data-key="card03_desc">
-                AIロボティクス分野等の安全性に係る実証事業・研究開発事業。
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="toc-item">
-          <div class="toc-link is-soon" aria-disabled="true">
-            <div class="toc-no editable"
-                 data-editable="text"
-                 data-path="index_test.html"
-                 data-key="card04_no">04</div>
-
-            <div class="toc-body">
-              <div class="toc-topline">
-                <div class="toc-label editable"
-                     data-editable="text"
-                     data-path="index_test.html"
-                     data-key="card04_label">COURSE</div>
-
-                <div class="toc-tags editable"
-                     data-editable="text"
-                     data-path="index_test.html"
-                     data-key="card04_tags">
-                  <span class="tag">2023–2027年度</span>
-                  <span class="tag is-soon">準備中</span>
+          <article class="toc-item">
+            <div class="toc-link is-soon" aria-disabled="true">
+              <div class="toc-no">02</div>
+              <div class="toc-body">
+                <div class="toc-topline">
+                  <div class="toc-label">ARCHIVE</div>
+                  <div class="toc-tags">
+                    <span class="tag">2018–2024年度</span>
+                    <span class="tag is-soon">準備中</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="toc-h editable"
-                   data-editable="text"
-                   data-path="index_test.html"
-                   data-key="card04_title">AI品質マネジメント講座</div>
-
-              <div class="toc-desc editable"
-                   data-editable="text"
-                   data-path="index_test.html"
-                   data-key="card04_desc">
-                NEDOプロジェクトを核とした人材育成、産学連携等の総合的展開。
+                <h2 class="toc-h">AI品質マネジメント</h2>
+                <p class="toc-desc">
+                  AI品質・信頼性の評価・管理に関する取組。
+                  （NEDO事業／経産省交付金事業 等）
+                </p>
               </div>
             </div>
+          </article>
+
+          <article class="toc-item">
+            <div class="toc-link is-soon" aria-disabled="true">
+              <div class="toc-no">03</div>
+              <div class="toc-body">
+                <div class="toc-topline">
+                  <div class="toc-label">NEXT</div>
+                  <div class="toc-tags">
+                    <span class="tag">2026年度</span>
+                    <span class="tag">BRIDGE</span>
+                    <span class="tag is-soon">準備中</span>
+                  </div>
+                </div>
+
+                <h2 class="toc-h">AIセーフティ強化 2.0</h2>
+                <p class="toc-desc">
+                  AIロボティクス分野等の安全性に係る実証事業・研究開発事業。
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="toc-item">
+            <div class="toc-link is-soon" aria-disabled="true">
+              <div class="toc-no">04</div>
+              <div class="toc-body">
+                <div class="toc-topline">
+                  <div class="toc-label">COURSE</div>
+                  <div class="toc-tags">
+                    <span class="tag">2023–2027年度</span>
+                    <span class="tag is-soon">準備中</span>
+                  </div>
+                </div>
+
+                <h2 class="toc-h">AI品質マネジメント講座</h2>
+                <p class="toc-desc">
+                  NEDOプロジェクトを核とした人材育成、産学連携等の総合的展開。
+                </p>
+              </div>
+            </div>
+          </article>
+
+        </section>
+
+        <footer class="portal-footer">
+          <div class="footer-left">
+            <div class="footer-title">National Institute of Advanced Industrial Science and Technology</div>
+            <div class="footer-sub">© 2026 AIST</div>
           </div>
-        </article>
+          <a class="footer-top" href="#top">Back to top</a>
+        </footer>
+      </div>
+    </main>
 
-      </section>
-
-      <footer class="portal-footer">
-        <div class="footer-left">
-          <div class="footer-title editable"
-               data-editable="text"
-               data-path="index_test.html"
-               data-key="footer_title">National Institute of Advanced Industrial Science and Technology</div>
-          <div class="footer-sub editable"
-               data-editable="text"
-               data-path="index_test.html"
-               data-key="footer_sub">© 2026 AIST</div>
-        </div>
-
-        <a class="footer-top editable"
-           href="#top"
-           data-editable="text"
-           data-path="index_test.html"
-           data-key="footer_top">Back to top</a>
-      </footer>
-    </div>
-  </main>
+  </div><!-- /editable -->
 </body>
 </html>
