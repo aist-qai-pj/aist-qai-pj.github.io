@@ -1,21 +1,13 @@
 paths:
   uploads: uploads
   static: ''
+
 collections_config:
   pages:
     path: ''
+    url: '/[filename]/'
     icon: wysiwyg
     disable_url: false
-    preview:
-      url: "https://aist-qai-pj.github.io/[path]"
-      text:
-      subtext:
-      icon:
-      icon_color:
-      icon_background_color:
-      image:
-      metadata:
-      gallery:
     _enabled_editors:
       - visual
       - content
@@ -23,7 +15,9 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+
 timezone: Asia/Tokyo
+
 markdown:
   engine: commonmark
   options:
