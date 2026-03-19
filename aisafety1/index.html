@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ja" data-root="./">
+<head>
+<script>document.documentElement.classList.add('js');</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AIセーフティ強化</title>
+<meta name="description" content="AIセーフティ強化（ページ構成・動作版）" />
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style_taikisha_bg.css">
+<link rel="stylesheet" href="assets/css/style_bg_motion_override_v4.css">
+<link rel="stylesheet" href="assets/css/home_fix.css">
+<link rel="stylesheet" href="assets/css/site.css" />
+<link rel="stylesheet" href="assets/css/home.css">
+<style>
+/* ロゴは画像だけ。背景（丸/グラデ/影）は使わない */
+.site-header .brand-mark{
+  background: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  width: 134px;
+  object-fit: contain;
+  display: block;
+}
+
+/* brand の横並びだけ担保 */
+.site-header .brand{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+</style>
+</head>
+<body class="page-home">
+<header class="site-header" id="top">
+  <div class="header-inner"> <a class="brand" href="./" aria-label="トップへ"> <img class="brand-mark" src="img/logo_nav.png" alt="" aria-hidden="true"> <span class="brand-text"> <span class="brand-title">AIセーフティ強化</span> <span class="brand-sub">AI Safety Enhancement</span> </span> </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニュー"> <span class="nav-toggle-lines" aria-hidden="true"></span> </button>
+<nav class="site-nav" id="site-nav" aria-label="グローバルナビゲーション">
+  <a class="nav-link" data-href="index.html" data-active="home">HOME</a>
+  <a class="nav-link" data-href="about/index.html" data-active="about">事業について</a>
+  <a class="nav-link" data-href="results/index.html" data-active="results">研究開発成果</a>
+  <a class="nav-link" data-href="contact/index.html" data-active="contact">お問い合わせ</a>
+</nav>
+    <button class="nav-backdrop" type="button" aria-hidden="true" tabindex="-1"></button>
+  </div>
+</header>
+<main>
+<section class="hero hero--full" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true">
+  </div>
+
+  <div class="container hero-inner">
+    <!-- ここに hero-reveal を追加 -->
+    <div class="hero-copy js-hero-reveal hero-reveal">
+      <p class="kicker reveal-item">
+        <span class="kicker-row">
+          <span class="kicker-text">AI Safety Enhancement</span>
+          <span class="safety-pill" aria-label="Safety Verified">
+            <span class="safety-dot" aria-hidden="true"></span>
+            SAFETY VERIFIED
+          </span>
+			<a class="hero-aist" href="https://www.aist.go.jp/" target="_blank" rel="noopener" aria-label="産総研（AIST）">
+  <img src="img/logo_nav.png" alt="AIST 産総研">
+</a>
+        </span>
+      </p>
+
+      <h1 class="hero-title reveal-item type-h1">AIセーフティ強化</h1>
+<h2 class="hero-subtitle reveal-item type-h2">事業の目的・概要・依頼</h2>
+
+      <p class="hero-lead reveal-item">
+        AI製品・サービスを安心して利用するための評価・管理技術とルールづくりを一体で推進します。
+      </p>
+
+      <p class="hero-body reveal-item">
+        研究開発、実証、ガイドライン／標準化を連動させ、成果を社会実装へつなげます。
+      </p>
+
+<div class="hero-actions reveal-item">
+  <a class="btn" href="results/index.html">研究開発成果を見る</a>
+  <a class="btn-ghost" href="about/index.html">事業の目的・概要</a>
+</div>    </div>
+  </div>
+
+  <!-- Hero bottom: results teaser strip -->
+  <div class="hero-bottom">
+    <div class="container hero-bottom-inner">
+
+      <!-- ここにも hero-reveal を追加 -->
+<div class="hero-bottom-head hero-reveal">
+  <h3 class="hero-bottom-title reveal-item">
+    <a href="results/index.html" style="color:inherit; text-decoration:none;">研究開発成果</a>
+  </h3>
+
+  <div class="year-switch reveal-item" aria-label="年度切替">
+    <a class="year-pill" href="results/2024/index.html">2024以前</a>
+    <a class="year-pill is-active" href="results/index.html">2025年度以降</a>
+    <span class="year-arrow" aria-hidden="true">›</span>
+  </div>
+</div>
+<div class="grid3">
+  <a class="glass-card" href="results/index.html#tech" aria-label="AIセーフティ評価・管理基盤技術へ">
+    <div class="circle-pop">
+      <div class="glass-badge"><span>1</span></div>
+      <h4 class="glass-title">AIセーフティ評価・管理基盤技術</h4>
+      <div class="glass-strong">10実証</div>
+      <ul class="glass-list">
+        <li>運用技術を開発し、評価・管理手法を実証</li>
+      </ul>
+    </div>
+  </a>
+
+  <a class="glass-card" href="results/index.html#life" aria-label="「暮らし」領域へ">
+    <div class="circle-pop">
+      <div class="glass-badge"><span>2</span></div>
+      <h4 class="glass-title">「暮らし」領域</h4>
+      <div class="glass-strong">6実証</div>
+      <ul class="glass-list">
+        <li>生活に実装したAIの安全利用を実証</li>
+      </ul>
+    </div>
+  </a>
+
+  <a class="glass-card" href="results/index.html#genai" aria-label="生成AI向け 品質マネジメント手法へ">
+    <div class="circle-pop">
+      <div class="glass-badge"><span>3</span></div>
+      <h4 class="glass-title">生成AI向け 品質マネジメント手法</h4>
+      <div class="glass-strong">ガイドライン・普及</div>
+      <ul class="glass-list">
+        <li>ガイドライン整備、普及、国際議論へ貢献</li>
+      </ul>
+    </div>
+  </a>
+</div>
+    </div>
+  </div>
+
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container-footer footer-inner">
+    <div class="footer-left">
+      <div class="footer-title">AIセーフティ強化</div>
+      <div class="footer-text">© 2026 National Institute of Advanced Industrial Science and Technology</div>
+    </div>
+        <div class="coming-actions">
+          <a class="btn" href="../index.html">ポータルへ戻る</a>
+        </div>
+
+</footer>
+
+<script src="assets/js/site.js" defer></script> 
+
+</body>
+</html>
