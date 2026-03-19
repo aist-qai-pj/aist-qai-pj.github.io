@@ -1,0 +1,30 @@
+/* home_fix.css : framework_site_v5 のトップだけ止血 */
+
+.hero,
+.hero * {
+  color: inherit;
+}
+
+/* VANTA背景は最背面に固定 */
+.hero-bg,
+#vanta-rings,
+#vanta-rings canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0 !important;
+}
+
+/* 文字・カードは前面に */
+.hero-inner,
+.hero-bottom,
+.hero-bottom * {
+  position: relative;
+  z-index: 2 !important;
+}
+
+/* reveal が効かず透明のまま問題を解除 */
+.reveal-item {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}

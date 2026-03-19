@@ -1,0 +1,522 @@
+/* =========================================================
+   about.css (ui-polish統一版 / COMPLETE)
+   - about固有のパネル/mini だけ
+   - 「③の3がはみ出す」を確実に止める：mini-head を GRID 化
+========================================================= */
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.ui-polish .about-panels{
+  padding: 22px 0 28px;
+}
+
+/* 2:1（①②の各幅＝③の幅） */
+.ui-polish .panel-grid{
+  display:grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  margin-top: 12px;
+}
+
+/* gridの子が押し出して列が広がらないための必須保険 */
+.ui-polish .panel-grid > *{
+  min-width: 0;
+}
+
+/* 大枠：細線 + ガラス */
+.ui-polish .panel{
+  min-width: 0; /* ←重要：右カラムで押し出させない */
+  border: 1px solid var(--line, rgba(11,18,32,.10));
+  border-radius: 26px;
+  padding: 16px;
+  background: linear-gradient(180deg, var(--glass, rgba(255,255,255,.62)), var(--glass2, rgba(255,255,255,.46)));
+  box-shadow: 0 16px 60px rgba(11,18,32,.10), 0 1px 0 rgba(255,255,255,.65) inset;
+  backdrop-filter: blur(14px) saturate(120%);
+  overflow: hidden;
+}
+
+.ui-polish .panel-title{
+  text-align:center;
+  font-weight:900;
+  letter-spacing: -.01em;
+  padding: 6px 10px 12px;
+  color: rgba(11,18,32,.88);
+  font-size: 15px;
+}
+
+/* 左/右の差は“気配”だけ */
+.ui-polish .panel--blue{
+  background:
+    radial-gradient(520px 360px at 18% 20%, rgba(43,179,255,.10), transparent 70%),
+    radial-gradient(520px 360px at 72% 78%, rgba(57,215,179,.08), transparent 70%),
+    linear-gradient(180deg, var(--glass, rgba(255,255,255,.62)), var(--glass2, rgba(255,255,255,.46)));
+}
+.ui-polish .panel--peach{
+  background:
+    radial-gradient(520px 360px at 78% 22%, rgba(255,179,58,.08), transparent 72%),
+    radial-gradient(520px 360px at 18% 84%, rgba(167,139,250,.07), transparent 70%),
+    linear-gradient(180deg, var(--glass, rgba(255,255,255,.62)), var(--glass2, rgba(255,255,255,.46)));
+}
+
+/* 左パネル（①②） */
+.ui-polish .panel-inner-2{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+  min-width: 0;
+}
+
+/* =========================================================
+   MINI CARDS
+========================================================= */
+
+.ui-polish .mini{
+  min-width: 0;          /* ←重要 */
+  max-width: 100%;
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  border: 1px solid rgba(11,18,32,.08);
+  background: rgba(255,255,255,.62);
+  box-shadow: 0 12px 36px rgba(11,18,32,.08), 0 1px 0 rgba(255,255,255,.65) inset;
+  backdrop-filter: blur(12px) saturate(120%);
+  overflow: hidden;
+
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ★ここが本丸：mini-head を GRID に固定（flex禁止） */
+.ui-polish .mini-head{
+  display:grid; /* ←flexにしない */
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items:center;
+  justify-items:center;
+  column-gap: 12px;
+
+  text-align:center;
+  font-weight:900;
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  background:
+    radial-gradient(180px 90px at 18% 45%, var(--a2, rgba(255,255,255,.12)), transparent 70%),
+    linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.55));
+
+  border: 1px solid rgba(11,18,32,.10);
+  margin-bottom: 10px;
+  letter-spacing:.01em;
+
+  max-width: 100%;
+}
+
+/* grid子が縮められるように */
+.ui-polish .mini-head > *{
+  min-width: 0;
+}
+
+/* 番号バッジ */
+.ui-polish .mini-no{
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+
+  font-weight:900;
+  font-size:20px;
+  line-height:1;
+
+  color: rgba(11,18,32,.92);
+
+  background:
+    radial-gradient(22px 22px at 30% 30%, rgba(255,255,255,.90), transparent 70%),
+    color-mix(in oklab, var(--a, rgba(11,18,32,.10)) 18%, rgba(255,255,255,.85));
+  border: 1px solid color-mix(in oklab, var(--a, rgba(11,18,32,.10)) 55%, rgba(11,18,32,.12));
+  box-shadow: 0 10px 26px rgba(11,18,32,.10), 0 1px 0 rgba(255,255,255,.85) inset;
+}
+
+/* ラベル：縮む + 折り返しOK（押し出し禁止） */
+.ui-polish .mini-label{
+  font-weight:900;
+  letter-spacing:.02em;
+  color: rgba(11,18,32,.86);
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  text-align: center;
+}
+
+/* 本文 */
+.ui-polish .mini-body{
+  color: rgba(11,18,32,.86);
+  line-height:1.7;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.ui-polish .mini-sub{
+  margin-top: 12px;
+  font-weight:900;
+  color: rgba(11,18,32,.86);
+
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(11,18,32,.10);
+  background: rgba(255,255,255,.55);
+  font-size: 13px;
+  letter-spacing: .02em;
+}
+
+.ui-polish .mini-list,
+.ui-polish .mini-bullets{
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: rgba(11,18,32,.68);
+  line-height:1.75;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.ui-polish .mini-bullets{
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: rgba(11,18,32,.76);
+}
+.ui-polish .mini-bullets li{
+  margin: 7px 0;
+  font-weight: 650;
+}
+.ui-polish .mini-list{
+  font-size: 12.8px;
+  color: rgba(11,18,32,.64);
+}
+.ui-polish .mini-list li,
+.ui-polish .mini-bullets li{ margin: 6px 0; }
+
+/* =========================================================
+   ①②③：色の差（cards内だけ）
+========================================================= */
+.ui-polish .panel--blue .mini:nth-of-type(1){ --a:#4f7dff; --a2: rgba(79,125,255,.28); }
+.ui-polish .panel--blue .mini:nth-of-type(2){ --a:#22c58f; --a2: rgba(34,197,143,.26); }
+.ui-polish .panel--peach .mini{             --a:#b784ff; --a2: rgba(183,132,255,.26); }
+
+.ui-polish .mini{
+  border-color: color-mix(in oklab, var(--a, rgba(11,18,32,.08)) 55%, rgba(11,18,32,.08));
+  background:
+    radial-gradient(240px 200px at 22% 18%, var(--a2, transparent), transparent 62%),
+    radial-gradient(240px 200px at 82% 86%, color-mix(in oklab, var(--a2, transparent) 70%, transparent), transparent 64%),
+    rgba(255,255,255,.62);
+}
+
+/* =========================================================
+   divider位置を揃える（既存仕様）
+========================================================= */
+.ui-polish .mini-top{
+  height: 210px;
+  overflow: hidden;
+}
+.ui-polish .mini-divider{
+  height: 1px;
+  background: rgba(11,18,32,.10);
+  margin: 10px 0 12px;
+}
+.ui-polish .mini-goal{
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* =========================================================
+   Responsive
+========================================================= */
+@media (max-width: 980px){
+  .ui-polish .panel-grid{ grid-template-columns: 1fr; }
+  .ui-polish .panel-inner-2{ grid-template-columns: 1fr; }
+  .ui-polish .mini-top{ height: auto; overflow: visible; }
+}
+/* =========================================
+   ABOUT: ③( panel--peach / mini--peach ) のはみ出しだけ確実に止める
+   ========================================= */
+
+/* ③のカード自体が押し広げないように */
+.ui-polish .panel--peach,
+.ui-polish .panel--peach .mini--peach{
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+/* ★本丸：③のピルは必ず “カード幅いっぱい” に固定 */
+.ui-polish .panel--peach .mini--peach .mini-head{
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+
+  /* 中身が原因で伸びないように、2カラムgridで固定 */
+  display: grid !important;
+  grid-template-columns: 44px minmax(0, 1fr) !important;
+  align-items: center !important;
+  column-gap: 12px !important;
+  justify-items: center !important;
+
+  padding: 10px 12px !important; /* ③だけ少し詰める */
+}
+
+/* 子要素が縮められないと押し出す → ここ必須 */
+.ui-polish .panel--peach .mini--peach .mini-head > *{
+  min-width: 0 !important;
+}
+
+/* ラベルは折り返しOK（押し出し禁止） */
+.ui-polish .panel--peach .mini--peach .mini-label{
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  max-width: 100% !important;
+}
+
+
+
+
+/* =========================================
+   FIX: ③（panel--peach）の「3」がはみ出す問題を止める
+   ========================================= */
+
+/* ③のカラム/カードが押し広げられない保険 */
+.ui-polish .about-panels .panel-grid > *,
+.ui-polish .about-panels .panel--peach,
+.ui-polish .about-panels .panel--peach .mini{
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+/* ③のmini-headが“中身の幅”で広がるのを止める（本丸） */
+.ui-polish .about-panels .panel--peach .mini--peach .mini-head{
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+
+  /* 中身で横に伸びないように grid で固定 */
+  display: grid !important;
+  grid-template-columns: 44px minmax(0, 1fr) !important;
+  align-items: center !important;
+  column-gap: 12px !important;
+}
+
+/* grid子要素が縮められないと押し出すので必須 */
+.ui-polish .about-panels .panel--peach .mini--peach .mini-head > *{
+  min-width: 0 !important;
+}
+
+/* ラベルが原因で横に押し出さない（折り返し許可） */
+.ui-polish .about-panels .panel--peach .mini--peach .mini-label{
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+/* 物理的に“はみ出し表示”自体をさせない最終保険 */
+.ui-polish .about-panels .panel--peach{
+  overflow: hidden !important;
+}
+/* =========================================
+   FIX: ③（右）の mini をパネルの高さまで伸ばす
+========================================= */
+.ui-polish .panel--peach{
+  display: flex;
+  flex-direction: column;
+}
+
+/* panel-title の下にある article.mini を残りの高さで埋める */
+.ui-polish .panel--peach .mini--peach{
+  flex: 1 1 auto;
+  min-height: 0;
+  align-self: stretch;
+}
+/* =========================================================
+   Modal（dialog）
+========================================================= */
+.ui-polish .rd-modal{
+  border: 0;
+  padding: 0;
+  width: min(980px, calc(100% - 28px));
+  border-radius: 22px;
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 26px 90px rgba(11,18,32,.22);
+}
+.ui-polish .rd-modal::backdrop{
+  background: rgba(11,18,32,.45);
+  backdrop-filter: blur(6px);
+}
+.ui-polish .rd-modal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  padding: 14px 14px 12px;
+  border-bottom: 1px solid rgba(11,18,32,.10);
+}
+.ui-polish .rd-modal-kicker{
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .10em;
+  color: rgba(11,18,32,.55);
+}
+.ui-polish .rd-modal-h{
+  font-size: 16px;
+  font-weight: 900;
+  color: rgba(11,18,32,.90);
+}
+.ui-polish .rd-modal-body{
+  padding: 14px;
+}
+.ui-polish .rd-fig-stack{
+  display:grid;
+  gap: 12px;
+}
+.ui-polish .rd-fig-stack img{
+  width: 100%;
+  height: auto;
+  display:block;
+  border-radius: 18px;
+  border: 1px solid rgba(11,18,32,.10);
+  background: rgba(255,255,255,.60);
+}
+.ui-polish .rd-modal-actions{
+  margin-top: 12px;
+  display:flex;
+  justify-content:flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+/* =========================================================
+   Overview callout（検索の下）
+========================================================= */
+.rd-overview-callout{
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(11,18,32,.10);
+  background: rgba(255,255,255,.56);
+  box-shadow: 0 1px 0 rgba(255,255,255,.70) inset;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 14px;
+}
+.rd-overview-kicker{
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .10em;
+  color: rgba(11,18,32,.55);
+}
+.rd-overview-h{
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 900;
+  color: rgba(11,18,32,.90);
+}
+.rd-overview-p{
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(11,18,32,.66);
+  line-height: 1.6;
+}
+@media (max-width: 820px){
+  .rd-overview-callout{
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.rd-overview-callout--button{
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.rd-overview-callout--button:focus-visible{
+  outline: 2px solid rgba(0,0,0,.25);
+  outline-offset: 6px;
+  border-radius: 18px;
+}
+
+.rd-overview-callout--button .rd-overview-cta{
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.78);
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.rd-overview-callout--button:hover .rd-overview-cta{
+  transform: translateY(-1px);
+}
+.rd-overview-callout--button:hover{
+  filter: brightness(0.99);
+}
+/* パネル自体は従来の見た目を維持しつつ、ボタン感を足す */
+.rd-overview-callout{
+  position: relative;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+/* “押せる”感じ：ホバーでふわっと */
+.rd-overview-callout:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(0,0,0,.10);
+  filter: saturate(1.03);
+}
+
+/* キーボードフォーカスも見えるように */
+.rd-overview-callout:focus-within{
+  outline: 2px solid rgba(0,0,0,.25);
+  outline-offset: 6px;
+  border-radius: 18px; /* 既存に合わせて調整 */
+}
+
+/* これが“全面クリック”の透明リンク */
+.rd-overview-hit{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit; /* 角丸を継承 */
+}
+
+/* ただし内部のボタン等はクリックできるように上に出す */
+.rd-overview-actions,
+.rd-overview-actions *{
+  position: relative;
+  z-index: 2;
+}
+
+/* 右のボタンが離れすぎなら、ここで寄せる（既存クラス名に合わせて調整） */
+.rd-overview-callout{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.rd-overview-title{
+  flex: 1;
+  min-width: 0;
+}
+
+.rd-overview-actions{
+  flex: 0 0 auto;
+}

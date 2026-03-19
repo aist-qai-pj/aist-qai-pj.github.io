@@ -1,0 +1,211 @@
+/* =========================
+   HOME ONLY (body.page-home)
+   ========================= */
+
+/* Vantaの重なり順 */
+body.page-home .hero.hero--full{ position: relative; overflow: hidden; }
+body.page-home .hero.hero--full .hero-bg{
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+}
+body.page-home #vanta-rings{
+  position:absolute; inset:0; width:100%; height:100%; z-index:0;
+}
+
+/* 中身は前面へ */
+body.page-home .hero-inner,
+body.page-home .hero-bottom{
+  position:relative; z-index:1;
+}
+
+/* =========================
+   Circle pop
+   - circles-in が付くまでは隠す
+   ========================= */
+body.page-home .circle-pop{
+  opacity:0;
+  transform: translate3d(0,18px,0) scale(.96);
+  filter: blur(6px);
+  transform-origin: 50% 60%;
+  transition: opacity .7s ease, transform .7s ease, filter .8s ease;
+}
+body.page-home.circles-in .circle-pop{
+  opacity:1; transform:none; filter:none;
+}
+
+/* =========================
+   Hero text reveal
+   ルール:
+   - 普段は見える（事故防止）
+   - body.reveal-ready の時だけ「隠して→出す」
+   ========================= */
+
+/* デフォルトは必ず表示（消える事故防止） */
+body.page-home .hero .reveal-item{
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* “準備完了”のときだけ隠す（ここがアニメ前の状態） */
+body.page-home.reveal-ready .hero .js-hero-reveal .reveal-item,
+body.page-home.reveal-ready .hero .hero-bottom-head .reveal-item{
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(6px);
+  transition: opacity .7s ease, transform .7s ease, filter .8s ease;
+  will-change: opacity, transform, filter;
+}
+
+/* 表示トリガー（JSが付ける） */
+body.page-home.reveal-ready .hero .js-hero-reveal.is-inview .reveal-item,
+body.page-home.reveal-ready .hero .hero-bottom-head.is-inview .reveal-item{
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* 動きを減らす設定 */
+@media (prefers-reduced-motion: reduce){
+  body.page-home.reveal-ready .hero .js-hero-reveal .reveal-item,
+  body.page-home.reveal-ready .hero .hero-bottom-head .reveal-item{
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+/* =========================
+   Typing-like reveal (H1/H2 only)
+   body.page-home.type-in が付いた時だけ発動
+   ========================= */
+
+/* JSが動かなくても消えない（事故防止） */
+body.page-home .type-h1,
+body.page-home .type-h2{
+  opacity: 1;
+}
+
+/* タイピング風：左→右に“現れる” */
+@keyframes typeRevealMask{
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+body.page-home.type-in .type-h1,
+body.page-home.type-in .type-h2{
+  position: relative;
+  display: inline-block;           /* マスクが効くように */
+  clip-path: inset(0 100% 0 0);    /* 開始は隠す（type-in時のみ） */
+  animation: typeRevealMask .85s cubic-bezier(.2,.8,.2,1) both;
+  will-change: clip-path;
+}
+
+/* h2 は少し遅らせて短め */
+body.page-home.type-in .type-h2{
+  animation-delay: .22s;
+  animation-duration: .65s;
+}
+
+/* --- caret (H1 only) --- */
+@keyframes caretBlink{
+  0%, 49% { opacity: 1; }
+  50%,100%{ opacity: 0; }
+}
+@keyframes caretHide{
+  to { opacity: 0; }
+}
+
+body.page-home .type-h1::after{
+  content: "";
+  position: absolute;
+  left: calc(100% + 6px);
+  top: 0.14em;
+  width: 2px;
+  height: 0.95em;
+  border-radius: 2px;
+  background: rgba(90, 100, 120, .9);
+  opacity: 0; /* 通常は非表示 */
+}
+
+/* 文字が出た後にカーソル点滅→消える */
+body.page-home.type-in .type-h1::after{
+  opacity: 1;
+  animation:
+    caretBlink .6s steps(2, end) 2 both,
+    caretHide  .2s ease both;
+  animation-delay:
+    calc(.85s + .08s), /* blink開始 */
+    calc(.85s + .08s + 1.2s); /* blink2回(=1.2s)後に消す */
+}
+
+/* 低減設定 */
+@media (prefers-reduced-motion: reduce){
+  body.page-home.type-in .type-h1,
+  body.page-home.type-in .type-h2{
+    clip-path: inset(0 0 0 0);
+    animation: none;
+  }
+  body.page-home.type-in .type-h1::after{
+    animation: none;
+    opacity: 0;
+  }
+}
+/* JSが有効な時だけ、最初から隠してフラッシュを防ぐ */
+html.js body.page-home .type-h1,
+html.js body.page-home .type-h2{
+  position: relative;
+  display: inline-block;
+  clip-path: inset(0 100% 0 0);
+  will-change: clip-path;
+}
+
+/* JSが無い時は普通に表示（安全） */
+body.page-home .type-h1,
+body.page-home .type-h2{
+  opacity: 1;
+}
+
+/* type-in が付いたらアニメ開始 */
+html.js body.page-home.type-in .type-h1,
+html.js body.page-home.type-in .type-h2{
+  animation: typeRevealMask .85s cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* h2 は遅らせて短め */
+html.js body.page-home.type-in .type-h2{
+  animation-delay: .22s;
+  animation-duration: .65s;
+}
+html.js body.page-home .type-h1::after{ opacity: 0; }
+html.js body.page-home.type-in .type-h1::after{ opacity: 1; /* 以降は既存のアニメ */ }
+/* トップの円カードをリンク化しても見た目を変えない */
+.glass-card{
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.glass-card:visited{ color: inherit; }
+.glass-card:focus-visible{
+  outline: 2px solid rgba(15,23,42,.25);
+  outline-offset: 4px;
+  border-radius: 20px; /* 既存の角丸に合わせて調整OK */
+}
+/* ===== footer専用コンテナ（広め） ===== */
+.container-footer{
+  width: min(1320px, calc(100% - 56px)); /* 1100→1240、左右余白も増やす */
+  margin-inline: auto;
+}
+.hero-aist{
+  display:inline-flex;
+  align-items:center;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(11,18,32,.10);
+  background: rgba(255,255,255,.55);
+}
+.hero-aist img{
+  height:18px;
+  width:auto;
+  display:block;
+  opacity:.95;
+}

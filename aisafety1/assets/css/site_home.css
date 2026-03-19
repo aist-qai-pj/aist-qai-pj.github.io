@@ -1,0 +1,31 @@
+/* =========================
+   Home only: hero fix pack
+   ========================= */
+
+/* レイヤー整理：背景は背面、文字は前面 */
+.page-home .hero.hero--full { position: relative; overflow: hidden; }
+.page-home .hero.hero--full .hero-bg{
+  position: absolute; inset: 0;
+  z-index: 0; pointer-events: none;
+}
+.page-home #vanta-rings{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 0; pointer-events: none;
+}
+.page-home .hero.hero--full .hero-inner,
+.page-home .hero.hero--full .hero-bottom{
+  position: relative;
+  z-index: 2;
+}
+
+/* reveal が原因で消えるのを“強制表示”で解除（framework側にreveal JSが無くても出る） */
+.page-home .js-hero-reveal .reveal-item,
+.page-home .reveal-item{
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* 念のため：hero-copy自体が透明にされても救う */
+.page-home .hero-copy{ opacity: 1 !important; }
