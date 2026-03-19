@@ -5,11 +5,9 @@ paths:
 collections_config:
   pages:
     path: ''
-    url: '/[name].html'
+    url: '/'
     icon: wysiwyg
     disable_url: false
-    preview:
-      url: "https://aist-qai-pj.github.io/[path]"
     _enabled_editors:
       - visual
       - content
