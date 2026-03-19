@@ -5,7 +5,7 @@ paths:
 collections_config:
   pages:
     path: ''
-    url: '/'
+    url: '/[relative_path]'
     icon: wysiwyg
     disable_url: false
     _enabled_editors:
